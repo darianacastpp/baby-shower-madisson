@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower de Madisson 🎀</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ min-height:100vh;
+ background:linear-gradient(145deg,#fff8fa,#f9e4eb,#fff8f5);
+ color:#805b66;
+ font-family:Montserrat,sans-serif;
+ overflow-x:hidden;
+}
+
+#opening{
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ padding:25px 15px;
+ text-align:center;
+}
+
+.intro{
+ font-family:'Cormorant Garamond',serif;
+ font-size:23px;
+ letter-spacing:3px;
+ margin-bottom:35px;
+ color:#a77a87;
+}
+
+.envelope{
+ position:relative;
+ width:min(340px,85vw);
+ height:225px;
+ background:#e8b9c8;
+ border-radius:5px;
+ box-shadow:0 15px 35px #a97c8a40;
+ cursor:pointer;
+ perspective:900px;
+}
+
+.envelope:before{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(145deg,#f5d8e0,#dca5b8);
+ clip-path:polygon(0 0,50% 58%,100% 0);
+ z-index:3;
+}
+
+.envelope:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(35deg,#dca5b8,#f5d5df);
+ clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);
+ z-index:2;
+}
+
+.flap{
+ position:absolute;
+ inset:0;
+ background:#edc5d1;
+ clip-path:polygon(0 0,100% 0,50% 60%);
+ transform-origin:top;
+ transition:transform 1s;
+ z-index:4;
+}
+
+.seal{
+ position:absolute;
+ z-index:5;
+ top:85px;
+ left:50%;
+ transform:translateX(-50%);
+ width:55px;
+ height:55px;
+ border-radius:50%;
+ background:#fff0f4;
+ display:grid;
+ place-items:center;
+ font-size:27px;
+ box-shadow:0 3px 10px #986a7c45;
+ transition:opacity .5s;
+}
+
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .seal{opacity:0}
+
+.tap{
+ margin-top:30px;
+ font-size:11px;
+ letter-spacing:3px;
+ color:#a77a87;
+ animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{50%{opacity:.4}}
+
+#invitation{
+ display:none;
+ min-height:100vh;
+ padding:35px 16px 55px;
+ text-align:center;
+ animation:appear 1.2s ease;
+}
+
+@keyframes appear{
+ from{opacity:0;transform:translateY(25px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+.paper{
+ position:relative;
+ max-width:520px;
+ margin:auto;
+ padding:35px 23px;
+ background:#fffdfb;
+ border:1px solid #efd8df;
+ box-shadow:0 12px 40px #9e71801c;
+ overflow:hidden;
+}
+
+.paper:before{
+ content:"";
+ position:absolute;
+ inset:9px;
+ border:1px solid #e9cbd5;
+ pointer-events:none;
+}
+
+.bow{
+ font-size:38px;
+ margin:4px 0 15px;
+}
+
+.small{
+ font-size:10px;
+ letter-spacing:4px;
+ color:#b18a96;
+}
+
+h1{
+ font-family:'Great Vibes',cursive;
+ font-size:60px;
+ font-weight:400;
+ color:#c17e96;
+ margin:8px 0;
+}
+
+.subtitle{
+ font-family:'Cormorant Garamond',serif;
+ font-size:25px;
+ letter-spacing:2px;
+}
+
+.bunny{
+ display:block;
+ width:min(230px,75%);
+ height:230px;
+ object-fit:contain;
+ margin:12px auto;
+}
+
+.message{
+ font-family:'Cormorant Garamond',serif;
+ font-size:20px;
+ line-height:1.65;
+ padding:0 5px;
+}
+
+.details{
+ margin:24px 0;
+ padding:18px 8px;
+ border-top:1px solid #eed8df;
+ border-bottom:1px solid #eed8df;
+ font-family:'Cormorant Garamond',serif;
+ font-size:21px;
+ line-height:1.8;
+}
+
+.details strong{
+ color:#bd8296;
+ font-weight:600;
+}
+
+.buttons{
+ display:flex;
+ flex-direction:column;
+ gap:12px;
+ align-items:center;
+ margin:22px 0;
+}
+
+.btn{
+ display:inline-block;
+ width:min(270px,100%);
+ padding:13px 18px;
+ border:1px solid #d9aab9;
+ border-radius:30px;
+ background:#f8e8ed;
+ color:#906474;
+ text-decoration:none;
+ font-family:Montserrat,sans-serif;
+ font-size:11px;
+ letter-spacing:1px;
+ transition:.3s;
+}
+
+.btn:hover{
+ background:#eac4d1;
+ transform:translateY(-3px);
+}
+
+.footer{
+ font-family:'Great Vibes',cursive;
+ font-size:31px;
+ color:#c17e96;
+ margin-top:22px;
+}
+
+.sparkle{
+ position:fixed;
+ pointer-events:none;
+ animation:fall linear infinite;
+ opacity:.65;
+ z-index:10;
+}
+
+@keyframes fall{
+ from{transform:translateY(-10vh) rotate(0deg);opacity:0}
+ 15%{opacity:.8}
+ to{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+
+.heart{
+ color:#d59bad;
+}
+</style>
+</head>
+
+<body>
+
+<section id="opening">
+ <div class="intro">UNA DULCE INVITACIÓN</div>
+
+ <div class="envelope" id="envelope" onclick="openLetter()">
+  <div class="flap"></div>
+  <div class="seal">🎀</div>
+ </div>
+
+ <div class="tap">TOCA EL SOBRE PARA ABRIR</div>
+</section>
+
+<section id="invitation">
+ <div class="paper">
+
+  <div class="bow">🎀</div>
+  <div class="small">CON MUCHO AMOR TE INVITAMOS A</div>
+
+  <div class="subtitle">Mi Baby Shower</div>
+  <h1>Madisson</h1>
+
+  <img class="bunny"
+   src="https://i.postimg.cc/RFDp1K6p/3F5EC13D-3125-49A0-8AC4-38C110363BB7.png"
+   alt="Conejita bailarina">
+
+  <div class="message">
+   Con mucha ilusión y amor, queremos celebrar la llegada de nuestra pequeña princesa. 🩰🎀
+
+   <br><br>
+
+   Cada día falta menos para tenerla en nuestros brazos, y nos encantaría compartir esta dulce espera con las personas que forman parte de nuestras vidas.
+
+   <br><br>
+
+   Te invitamos a celebrar con nosotros este momento tan especial, lleno de amor, alegría y ternura. 🐰💗
+
+   <br><br>
+
+   ¡Nos encantará compartir contigo esta hermosa ilusión!
+  </div>
+
+  <div class="details">
+   <strong>♡ FECHA ♡</strong><br>
+   Sábado 21 de noviembre de 2026
+
+   <br><br>
+
+   <strong>♡ HORA ♡</strong><br>
+   3:30 p. m.
+
+   <br><br>
+
+   <strong>♡ LUGAR ♡</strong><br>
+   Calle Blancos<br>
+   San José, Costa Rica
+  </div>
+
+  <div class="small">NOS ENCANTARÍA CONTAR CONTIGO</div>
+
+  <div class="buttons">
+   <a class="btn"
+    href="https://forms.gle/R1Z851ddq34NyM6i6"
+    target="_blank">
+    💌 CONFIRMAR ASISTENCIA
+   </a>
+
+   <a class="btn"
+    href="https://maps.app.goo.gl/E2p1Z1wN1DqRnyir6?g_st=ic"
+    target="_blank">
+    📍 VER UBICACIÓN
+   </a>
+  </div>
+
+  <div class="footer">
+   Con cariño y mucha ilusión...
+  </div>
+
+  <div class="bow">🩰 🌸 🎀 🌸</div>
+
+ </div>
+</section>
+
+<script>
+function openLetter(){
+ const envelope=document.getElementById('envelope');
+ envelope.classList.add('open');
+
+ setTimeout(()=>{
+  document.getElementById('opening').style.display='none';
+  document.getElementById('invitation').style.display='block';
+  window.scrollTo(0,0);
+ },1100);
+}
+
+for(let i=0;i<22;i++){
+ const s=document.createElement('div');
+ s.className='sparkle';
+ s.textContent=['✧','✨','♡','✦'][i%4];
+ s.style.left=Math.random()*100+'%';
+ s.style.animationDuration=(5+Math.random()*8)+'s';
+ s.style.animationDelay=(-Math.random()*10)+'s';
+ s.style.fontSize=(10+Math.random()*15)+'px';
+ document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
